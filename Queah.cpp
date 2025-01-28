@@ -44,6 +44,7 @@ int conversorLixeira(int posX, int posY, bool tipoXouY);
 int conversorLixeira(int posX, int posY);
 int conversorTabuleiro(int fimX, int fimY, bool tipoXouY);
 int conversorTabuleiro(int fimX, int fimY);
+void redefinirTabuleiro(char tabuleiro[5][5]);
 
 int main(){
     const int screenWidth = 720;
@@ -134,7 +135,7 @@ int main(){
     char nomeJogador1[100] = "\0";  // Variável para armazenar o texto exibido após o Enter
     char nomeJogador2[100] = "\0";  // Variável para armazenar o texto exibido após o Enter
     char nomeVencedor[100];
-    
+    int pediuPraZeraZero = 1;
 
     int totalPecasJogador1 = 10;
     int totalPecasJogador2 = 10;
@@ -158,7 +159,7 @@ int main(){
                             {'.',' ','X','X','.'},//1
                             {' ','Y',' ','X',' '},//2
                             {'.','Y','Y',' ','.'},//3
-                            {'.','.','Y','.','.'}/*4*/};
+                            {'.','.','Y','.','.'} /*4*/};
                             
     Vector2 pecasPosicao1[10] = {
         posicaoCirculos[2],
@@ -523,10 +524,14 @@ int main(){
             if(pecasAtivas1 > 0 && pecasAtivas2 < 1){
                 const char *nome3 = nomeJogador1;
                 escreverNomeVencedor(nome3);
+                escreverNomeJogador1(nomeJogador1);
+                escreverNomeJogador2(nomeJogador2);
                 janelaExibir = acaoVitoria;
             }else if (pecasAtivas1 < 1 && pecasAtivas2 > 0){
                 const char *nome3 = nomeJogador2;
                 escreverNomeVencedor(nome3);
+                escreverNomeJogador1(nomeJogador1);
+                escreverNomeJogador2(nomeJogador2);
                 janelaExibir = acaoVitoria;
             }
         }
@@ -547,8 +552,7 @@ int main(){
             }
             if (IsKeyPressed(KEY_ENTER)){
                 strcpy(nomeJogador2, nomePara2);  // Copia o texto de name para JOGADOR2
-                const char *nome2 = nomeJogador2;
-                escreverNomeJogador2(nome2);
+                pediuPraZeraZero = 0;
                 letterCount = 0;
             }
             if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
@@ -574,8 +578,7 @@ int main(){
             }
             if (IsKeyPressed(KEY_ENTER)){
                 strcpy(nomeJogador1, nomePara1);  // Copia o texto de name para JOGADOR1
-                const char *nome1 = nomeJogador1;
-                escreverNomeJogador1(nome1);
+                pediuPraZeraZero = 0;
                 letterCount = 0;
             }
             if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
@@ -596,13 +599,58 @@ int main(){
         } else {
             if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
                 Vector2 mousePosition = GetMousePosition();
-                if(CheckCollisionPointRec(mousePosition, voltar)) janelaExibir = acaoInicio;
+                if(CheckCollisionPointRec(mousePosition, voltar)){
+                    if (janelaExibir == acaoVitoria){
+                        if(pediuPraZeraZero = 1){
+                            pecasAtivas1 = 10;
+                            pecasAtivas2 = 10;
+                        }
+                    }
+                    janelaExibir = acaoInicio;
+                }
             }
         }
         if(janelaExibir == acaoVitoria){
             if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
                 Vector2 mousePosition = GetMousePosition();
-                if (CheckCollisionPointRec(mousePosition, criadoresfinal)) janelaExibir = acaoCriadores;
+                total1 = 6;
+                total2 = 6;
+                pecasPosicao2[0] = posicaoCirculos[3];
+                pecasPosicao2[1] = posicaoCirculos[5];
+                pecasPosicao2[2] = posicaoCirculos[8];
+                pecasPosicao2[3] = posicaoCirculos[10];
+                pecasPosicao2[4] = posicaoCirculos[14];
+                pecasPosicao2[5] = posicaoCirculos[14];
+                pecasPosicao2[6] = posicaoCirculos[14];
+                pecasPosicao2[7] = posicaoCirculos[14];
+                pecasPosicao2[8] = posicaoCirculos[14];
+                pecasPosicao2[9] = posicaoCirculos[14];
+
+                pecasPosicao1[0] = posicaoCirculos[2];
+                pecasPosicao1[1] = posicaoCirculos[4];
+                pecasPosicao1[2] = posicaoCirculos[7];
+                pecasPosicao1[3] = posicaoCirculos[9];
+                pecasPosicao1[4] = posicaoCirculos[14];
+                pecasPosicao1[5] = posicaoCirculos[14];
+                pecasPosicao1[6] = posicaoCirculos[14];
+                pecasPosicao1[7] = posicaoCirculos[14];
+                pecasPosicao1[8] = posicaoCirculos[14];
+                pecasPosicao1[9] = posicaoCirculos[14];
+                redefinirTabuleiro(tabuleiro);
+                pediuPraZeraZero = 1;
+                for (int i = 0; i < MAX_INPUT_CHARS + 1; i++) {
+                    nomePara1[i] = '\0';
+                    nomePara2[i] = '\0';
+                }
+                corPecaJogador1 = DARKGRAY;
+                corPecaJogador2 = DARKGRAY;
+                if (CheckCollisionPointRec(mousePosition, criadoresfinal)){ 
+                    if(pediuPraZeraZero = 1){
+                        pecasAtivas1 = 10;
+                        pecasAtivas2 = 10;
+                    }
+                    janelaExibir = acaoCriadores;
+                }
             }
         }
         int tamanhoQueah = MeasureText("Queah", 150);
@@ -644,7 +692,7 @@ int main(){
                 DrawText(nomePara1, (int)textBox.x + 5, (int)textBox.y + 8, 20, MAROON);
 
                 // Exibe o texto abaixo da caixa de entrada após pressionar Enter
-                if (nomeJogador1[0] != '\0')
+                if (nomeJogador1[0] != '\0' && pediuPraZeraZero == 0)
                 {
                     DrawText(TextFormat("Nome: %s", nomeJogador1), 280, 280, 20, DARKGREEN);
                 }
@@ -669,7 +717,7 @@ int main(){
                 DrawText(nomePara2, (int)textBox.x + 5, (int)textBox.y + 8, 20, MAROON);
 
                 // Exibe o texto abaixo da caixa de entrada após pressionar Enter
-                if (nomeJogador2[0] != '\0')
+                if (nomeJogador2[0] != '\0' && pediuPraZeraZero == 0)
                 {
                     DrawText(TextFormat("Nome: %s", nomeJogador2), 280, 280, 20, DARKGREEN);
                 }
@@ -815,7 +863,6 @@ int main(){
                 int tamanhoParabens = MeasureText("Parabéns!", 30);
                 int textXParabens = (screenWidth - tamanhoParabens) / 2;
                 DrawText("Parabéns!",textXParabens, 370, 30, BLACK);
-                
                 break;
         }
        
@@ -1188,3 +1235,18 @@ void lerConteudoDoArquivoPara3(char linhas[MAX_LINHAS][MAX_LINHA]) {
     fclose(arquivo);
 }
 
+void redefinirTabuleiro(char tabuleiro[5][5]){
+    char novoTabuleiro[5][5] = {
+        {'.', '.', 'X', '.', '.'}, // Linha 0
+        {'.', ' ', 'X', 'X', '.'}, // Linha 1
+        {' ', 'Y', ' ', 'X', ' '}, // Linha 2
+        {'.', 'Y', 'Y', ' ', '.'}, // Linha 3
+        {'.', '.', 'Y', '.', '.'}  // Linha 4
+    };
+
+    for (int i = 0; i < 5; ++i) {
+        for (int j = 0; j < 5; ++j) {
+            tabuleiro[i][j] = novoTabuleiro[i][j];
+        }
+    }
+}
