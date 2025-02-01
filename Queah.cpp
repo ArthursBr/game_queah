@@ -726,6 +726,8 @@ int main(){
                 AbaQueah();
                 DrawRectangleRounded(voltar, roundness, segments, retColorVoltar);
                 DrawText("Voltar", voltar.x + 18, voltar.y + 7, 20, colorVoltar);
+                DrawText(TextFormat("%s", nomeJogador1), 160, 70, 20, BLACK);
+                DrawText(TextFormat("%s", nomeJogador2), 450, 70, 20, BLACK);
 
                 DrawRectangleRec(tabuleiroTela, LIGHTGRAY);
                 DrawRectanglePro(quadrado1, origin, rotation, BLACK);
