@@ -30,8 +30,7 @@ Queah é um jogo de tabuleiro digital desenvolvido em C++ com a biblioteca Rayli
 
 ## Instalação
 
-1. Baixe o arquivo Queah.exe.
-2. Execute o arquivo e siga as instruções de instalação.
+* Baixe o arquivo Queah.exe e execute o arquivo
 
 ## Funcionalidades
 
