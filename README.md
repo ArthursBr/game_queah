@@ -1,4 +1,4 @@
-## Queah - Jogo de Tabuleiro Digital
+## Queah - Jogo de Tabuleiro
 
 ## Sobre
 
