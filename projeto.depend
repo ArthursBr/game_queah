@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1737679007 source:c:\users\pedro\code\projeto\main.cpp
+	<raylib.h>
+	<cmath>
+	<cstring>
+	<cstdio>
+	<cstdlib>
+
+1737676964 c:\users\pedro\code\projeto\raylib\src\raylib.h
+	<stdarg.h>
+	<stdbool.h>
+
+1737679038 source:c:\users\arthu\desktop\projeto_arthur\projeto\main.cpp
+	<raylib.h>
+	<cmath>
+	<cstring>
+	<cstdio>
+	<cstdlib>
+
+1738026689 source:c:\users\arthu\desktop\projeto_queah\projeto\main.cpp
+	<raylib.h>
+	<cmath>
+	<cstring>
+	<cstdio>
+
+1737679038 c:\users\arthu\desktop\projeto_queah\projeto\raylib\src\raylib.h
+	<stdarg.h>
+	<stdbool.h>
+
