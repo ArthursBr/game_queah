@@ -4,7 +4,7 @@
 
 Queah é um jogo de tabuleiro digital desenvolvido em C++ com a biblioteca Raylib. O objetivo do jogo é capturar todas as peças do adversário, utilizando estratégia e regras específicas de movimentação e captura.
 
-## Jogadores
+## Criadores
 
 * Arthur Soares 
 * Yami Nascimento 
