@@ -1,6 +1,6 @@
 ## Queah - Jogo de Tabuleiro
 
-Queah é um jogo de tabuleiro, que desenvolvemos uma versão digital, com certas limitações, mas que represente com clareza as suas regras e seu funcionamento, seu objetivo do jogo é capturar todas as peças do adversário, utilizando estratégia e regras específicas de movimentação e captura.
+Queah é um jogo de tabuleiro, que desenvolvemos uma versão digital, com certas limitações, mas que representa com clareza as suas regras e seu funcionamento, seu objetivo do jogo é capturar todas as peças do adversário, utilizando estratégia e regras específicas de movimentação e captura.
 
 ## Criadores
 
