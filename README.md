@@ -14,7 +14,7 @@ Queah é um jogo de tabuleiro, que desenvolvemos uma versão digital, com certas
 ## Tecnologias
 
 * C++
-* Raylib
+* Raylib - Biblioteca para interface
 
 ## Como Jogar
 
