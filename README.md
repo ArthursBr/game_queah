@@ -2,15 +2,6 @@
 
 Queah é um jogo de tabuleiro, que desenvolvemos uma versão digital, com certas limitações, mas que representa com clareza as suas regras e seu funcionamento, seu objetivo do jogo é capturar todas as peças do adversário, utilizando estratégia e regras específicas de movimentação e captura.
 
-## Criadores
-
-* Arthur Soares 
-* Yami Nascimento 
-* Yasmim Passos 
-* Matheus Santiago
-* Savio Lourenco
-* Wallace Barreto
-
 ## Tecnologias
 
 * C++
@@ -34,11 +25,6 @@ Queah é um jogo de tabuleiro, que desenvolvemos uma versão digital, com certas
 
 * Registro de partidas
 * Personalização de nomes
-
-## Licença
-
-Este projeto é para uso acadêmico e não possui licença oficial de distribuição. Desenvolvido para a disciplina de Programação II.
-
   
 ![Screenshot 2025-01-26 100042](https://github.com/user-attachments/assets/a43560ab-230f-4dcd-8d37-63e4c1221bcd)
 
